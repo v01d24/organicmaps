@@ -84,7 +84,7 @@ public class SensorHelper implements SensorEventListener
   @Override
   public void onAccuracyChanged(Sensor sensor, int accuracy)
   {
-    Log.w("onAccuracyChanged", "Sensor " + sensor.getStringType() + " has changed accuracy to " + accuracy);
+    Log.w("onAccuracyChanged", "Sensor " + sensor.getType() + " has changed accuracy to " + accuracy);
     // This method is called _only_ when accuracy changes. To know the initial startup accuracy,
     // and to show calibration warning toast if necessary, we check it in onSensorChanged().
     // Looks like modern Androids can send this event after starting the sensor.

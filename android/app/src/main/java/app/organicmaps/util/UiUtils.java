@@ -37,6 +37,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
@@ -61,7 +62,7 @@ public final class UiUtils
 
   public static void bringViewToFrontOf(@NonNull View frontView, @NonNull View backView)
   {
-    frontView.setZ(backView.getZ() + 1);
+    ViewCompat.setZ(frontView, ViewCompat.getZ(backView) + 1);
   }
 
   public static void linkifyView(@NonNull View view, @IdRes int id, @StringRes int stringId,
@@ -388,7 +389,8 @@ public final class UiUtils
   {
     final Window window = activity.getWindow();
     window.getDecorView().setFitsSystemWindows(false);
-    window.setStatusBarColor(Color.TRANSPARENT);
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+      window.setStatusBarColor(Color.TRANSPARENT);
   }
 
   public static void setLightStatusBar(@NonNull Activity activity, boolean isLight)
@@ -402,7 +404,7 @@ public final class UiUtils
       if (wic.isAppearanceLightStatusBars() != isLight)
         wic.setAppearanceLightStatusBars(isLight);
     }
-    else
+    else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
     {
       @ColorInt final int color = isLight
                                   ? ResourcesCompat.getColor(activity.getResources(), R.color.bg_statusbar_translucent, null)

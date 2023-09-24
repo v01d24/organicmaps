@@ -70,6 +70,8 @@ apply plugin: 'com.github.triplet.play'
 apply plugin: 'ru.cian.huawei-publish-gradle-plugin'
 
 dependencies {
+  implementation "androidx.multidex:multidex:2.0.1"
+
   // Google Mobile Services
   if (googleMobileServicesEnabled) {
     implementation 'com.google.android.gms:play-services-location:21.0.1'
@@ -148,7 +150,7 @@ android {
   compileSdkVersion propCompileSdkVersion.toInteger()
   buildToolsVersion propBuildToolsVersion
 
-  ndkVersion '26.0.10792818'
+  ndkVersion '23.1.7779620'
 
   defaultConfig {
     // Default package name is taken from the manifest and should be app.organicmaps

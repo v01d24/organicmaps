@@ -13,6 +13,7 @@ import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import app.organicmaps.Framework;
 import app.organicmaps.R;
 import app.organicmaps.downloader.MapManager;
@@ -256,7 +257,7 @@ public class StoragePathManager
     mInternalStorage = null;
 
     // External storages (SD cards and other).
-    for (File externalDir : mContext.getExternalFilesDirs(null))
+    for (File externalDir : ContextCompat.getExternalFilesDirs(mContext, null))
     {
       addStorageOption(externalDir, false, configPath);
     }

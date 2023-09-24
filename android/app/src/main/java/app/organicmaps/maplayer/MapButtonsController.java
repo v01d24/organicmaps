@@ -11,6 +11,7 @@ import android.view.ViewTreeObserver;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.OptIn;
+import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -88,7 +89,7 @@ public class MapButtonsController extends Fragment
       helpButton.setImageResource(R.drawable.logo);
       // Keep this button colorful in normal theme.
       if (!ThemeUtils.isNightTheme(requireContext()))
-        helpButton.getDrawable().setTintList(null);
+        DrawableCompat.setTintList(helpButton.getDrawable(), null);
     }
 
     final View zoomFrame = mFrame.findViewById(R.id.zoom_buttons_container);

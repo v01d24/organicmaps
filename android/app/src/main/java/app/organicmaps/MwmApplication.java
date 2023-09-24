@@ -17,6 +17,7 @@ import androidx.lifecycle.DefaultLifecycleObserver;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ProcessLifecycleOwner;
+import androidx.multidex.MultiDexApplication;
 
 import app.organicmaps.background.OsmUploadWork;
 import app.organicmaps.downloader.DownloaderNotifier;
@@ -49,7 +50,7 @@ import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-public class MwmApplication extends Application implements Application.ActivityLifecycleCallbacks
+public class MwmApplication extends MultiDexApplication implements Application.ActivityLifecycleCallbacks
 {
   @NonNull
   private static final String TAG = MwmApplication.class.getSimpleName();
