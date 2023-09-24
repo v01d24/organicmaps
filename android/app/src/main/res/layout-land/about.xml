@@ -69,7 +69,7 @@
       <TextView android:id="@+id/report"
           style="@style/MwmWidget.TextView.Item"
           android:text="@string/report_a_bug"
-          app:drawableStartCompat="@drawable/ic_report_a_bug"/>
+          app:drawableStartCompat="?icReportABug"/>
 
       <TextView
           android:id="@+id/support_us"
@@ -80,18 +80,18 @@
       <TextView android:id="@+id/faq"
           style="@style/MwmWidget.TextView.Item"
           android:text="@string/faq"
-          app:drawableStartCompat="@drawable/ic_question_mark"/>
+          app:drawableStartCompat="?icQuestionMark"/>
 
       <TextView android:id="@+id/news"
           style="@style/MwmWidget.TextView.Item"
           android:text="@string/news"
-          app:drawableStartCompat="@drawable/ic_news"/>
+          app:drawableStartCompat="?icNews"/>
 
       <TextView
           android:id="@+id/rate"
           style="@style/MwmWidget.TextView.Item"
           android:text="@string/rate_the_app"
-          app:drawableStartCompat="@drawable/ic_rate" />
+          app:drawableStartCompat="?icRate" />
 
       <View android:layout_width="match_parent"
           android:layout_height="1dp"

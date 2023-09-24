@@ -58,4 +58,11 @@
   <attr name="bookmarkSubscriptionCardBg" format="color"/>
   <attr name="bookmarkSubscriptionCardTextColor" format="color"/>
   <attr name="imgPromoBookingTitle" format="reference"/>
+  
+  <!-- Drawables with removed references -->
+  <attr name="icNews" format="reference"/>
+  <attr name="icQuestionMark" format="reference"/>
+  <attr name="icRate" format="reference"/>
+  <attr name="icReportABug" format="reference"/>
+  <attr name="splash" format="reference"/>
 </resources>

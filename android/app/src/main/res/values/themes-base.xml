@@ -134,6 +134,13 @@
     <item name="bottomSheetStyle">@style/MwmWidget.BottomSheet</item>
     <!-- Theme used for bottom sheet dialog components -->
     <item name="bottomSheetDialogTheme">@style/MwmTheme.BottomSheetDialog</item>
+
+    <!-- Drawables with removed references -->
+    <item name="icNews">@drawable/ic_news_light</item>
+    <item name="icQuestionMark">@drawable/ic_question_mark_light</item>
+    <item name="icRate">@drawable/ic_rate_light</item>
+    <item name="icReportABug">@drawable/ic_report_a_bug_light</item>
+    <item name="splash">@drawable/splash_light</item>
   </style>
 
   <!-- Night theme -->
@@ -260,5 +267,12 @@
 
     <item name="bottomSheetStyle">@style/MwmWidget.BottomSheet</item>
     <item name="bottomSheetDialogTheme">@style/MwmTheme.BottomSheetDialog</item>
+
+    <!-- Drawables with removed references -->
+    <item name="icNews">@drawable/ic_news_dark</item>
+    <item name="icQuestionMark">@drawable/ic_question_mark_dark</item>
+    <item name="icRate">@drawable/ic_rate_dark</item>
+    <item name="icReportABug">@drawable/ic_report_a_bug_dark</item>
+    <item name="splash">@drawable/splash_dark</item>
   </style>
 </resources>
