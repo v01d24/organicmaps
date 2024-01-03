@@ -235,6 +235,11 @@ public class PlacePageController extends Fragment implements
   private void setPlacePageHeightBounds()
   {
     final int peekHeight = calculatePeekHeight();
+    if (mCurrentWindowInsets == null) {
+      mPlacePageContainer.setMinimumHeight(200);
+      mPlacePageBehavior.setMaxHeight(500);
+      return;
+    }
     final Insets insets = mCurrentWindowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
     // Make sure the place page can reach the peek height
     final int minHeight = Math.max(peekHeight, mFrameHeight);

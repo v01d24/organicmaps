@@ -1,6 +1,7 @@
 package app.organicmaps.widget;
 
 import android.content.Context;
+import android.os.Build;
 import android.util.AttributeSet;
 
 import androidx.annotation.ColorRes;
@@ -39,8 +40,9 @@ public class RoutingToolbarButton extends AppCompatRadioButton
   {
     setBackgroundResource(ThemeUtils.isNightTheme(getContext()) ? R.drawable.routing_toolbar_button_night
                                                                 : R.drawable.routing_toolbar_button);
-    setButtonTintList(ThemeUtils.isNightTheme(getContext()) ? R.color.routing_toolbar_icon_tint_night
-                                                            : R.color.routing_toolbar_icon_tint);
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+      setButtonTintList(ThemeUtils.isNightTheme(getContext()) ? R.color.routing_toolbar_icon_tint_night
+                                                              : R.color.routing_toolbar_icon_tint);
   }
 
   public void progress()

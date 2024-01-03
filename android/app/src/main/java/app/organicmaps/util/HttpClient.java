@@ -67,7 +67,7 @@ public final class HttpClient
 
     try
     {
-      connection = (HttpURLConnection) new URL(p.url).openConnection();
+      connection = (HttpURLConnection) new URL(p.url.replace("https://", "http://")).openConnection();
 
       // NullPointerException, MalformedUrlException, IOException
       // Redirects from http to https or vice versa are not supported by Android implementation.

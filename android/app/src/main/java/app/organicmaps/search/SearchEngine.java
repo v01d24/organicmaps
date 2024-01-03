@@ -10,9 +10,8 @@ import app.organicmaps.api.ParsedMwmRequest;
 import app.organicmaps.base.Initializable;
 import app.organicmaps.util.Language;
 import app.organicmaps.util.Listeners;
+import app.organicmaps.util.StandardCharsets;
 import app.organicmaps.util.concurrency.UiThread;
-
-import java.nio.charset.StandardCharsets;
 
 public enum SearchEngine implements NativeSearchListener,
                                     NativeMapSearchListener,
