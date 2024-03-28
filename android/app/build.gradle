@@ -278,6 +278,8 @@ android {
     // https://github.com/organicmaps/organicmaps/issues/3608
     disable 'UnusedResources'
     abortOnError true
+    checkOnly += ['NewApi', 'InlinedApi']
+    fatal 'NewApi', 'InlineApi'
   }
 
   gradle.projectsEvaluated {

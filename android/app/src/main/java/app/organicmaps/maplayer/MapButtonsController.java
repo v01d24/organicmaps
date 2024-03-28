@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -44,6 +45,7 @@ public class MapButtonsController extends Fragment
   private View mBottomButtonsFrame;
   @Nullable
   private MapLayersController mToggleMapLayerController;
+  private FrameLayout mMenuButtonFrame;
 
   @Nullable
   private MyPositionButton mNavMyPosition;
@@ -112,6 +114,7 @@ public class MapButtonsController extends Fragment
           requireActivity(),
           mMapButtonsViewModel);
     }
+    mMenuButtonFrame = (FrameLayout) mFrame.findViewById(R.id.menu_button_frame);
     final View menuButton = mFrame.findViewById(R.id.menu_button);
     if (menuButton != null)
     {
@@ -208,7 +211,7 @@ public class MapButtonsController extends Fragment
     mBadgeDrawable.setVerticalOffset(dpToPx(9, context));
     mBadgeDrawable.setNumber(count);
     mBadgeDrawable.setVisible(count > 0);
-    BadgeUtils.attachBadgeDrawable(mBadgeDrawable, menuButton);
+    BadgeUtils.attachBadgeDrawable(mBadgeDrawable, menuButton, mMenuButtonFrame);
   }
 
   private boolean isBehindPlacePage(View v)

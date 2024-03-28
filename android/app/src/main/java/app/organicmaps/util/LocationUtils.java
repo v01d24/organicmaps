@@ -8,6 +8,7 @@ import android.provider.Settings;
 import android.view.Surface;
 
 import androidx.annotation.NonNull;
+import androidx.core.location.LocationCompat;
 
 public class LocationUtils
 {
@@ -56,7 +57,7 @@ public class LocationUtils
 
   public static double getTimeDiff(@NonNull Location lastLocation, @NonNull Location newLocation)
   {
-    return (newLocation.getElapsedRealtimeNanos() - lastLocation.getElapsedRealtimeNanos()) * 1.0E-9;
+    return (LocationCompat.getElapsedRealtimeNanos(newLocation) - LocationCompat.getElapsedRealtimeNanos(lastLocation)) * 1.0E-9;
   }
 
   public static boolean isFromGpsProvider(@NonNull Location location)

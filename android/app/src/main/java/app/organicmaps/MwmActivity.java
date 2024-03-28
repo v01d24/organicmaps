@@ -195,6 +195,8 @@ public class MwmActivity extends BaseMwmFragmentActivity
   private MapButtonsViewModel mMapButtonsViewModel;
   private MapButtonsController.LayoutMode mPreviousMapLayoutMode;
   private Mode mPreviousLayerMode;
+  
+  private boolean mIsDestroyed;
 
   @Nullable
   private WindowInsetsCompat mCurrentWindowInsets;
@@ -1084,6 +1086,7 @@ public class MwmActivity extends BaseMwmFragmentActivity
     mLocationResolutionRequest = null;
     mPostNotificationPermissionRequest.unregister();
     mPostNotificationPermissionRequest = null;
+    mIsDestroyed = true;
   }
 
   @Override
@@ -1949,7 +1952,7 @@ public class MwmActivity extends BaseMwmFragmentActivity
   private void onLocationPendingTimeout()
   {
     // Sic: the callback can be called after the activity is destroyed because of being queued.
-    if (isDestroyed())
+    if (mIsDestroyed)
     {
       Logger.w(LOCATION_TAG, "Ignore late callback from core because activity is already destroyed");
       return;
